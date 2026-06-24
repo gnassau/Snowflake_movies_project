@@ -1,0 +1,104 @@
+version: 2
+
+models:
+
+  - name: best_movies
+    description: "Filmes com melhor avaliação considerando mínimo de votos"
+
+    columns:
+
+      - name: title
+        description: "Título do filme"
+        tests:
+          - not_null
+
+      - name: avg_vote_average
+        description: "Média de avaliação"
+        tests:
+          - not_null
+
+      - name: total_votes
+        description: "Total de votos"
+        tests:
+          - not_null
+
+  - name: general_performance
+    description: "Métricas agregadas gerais da base de filmes"
+
+    columns:
+
+      - name: total_movies
+        tests:
+          - not_null
+
+      - name: avg_rating
+        tests:
+          - not_null
+
+      - name: total_revenue
+        tests:
+          - not_null
+
+      - name: total_budget
+        tests:
+          - not_null
+
+      - name: avg_profit
+        tests:
+          - not_null
+
+  - name: high_engagement_movies
+    description: "Filmes com alto engajamento baseado em popularidade e votos"
+
+    columns:
+
+      - name: title
+        tests:
+          - not_null
+
+      - name: popularity
+        tests:
+          - not_null
+
+      - name: vote_average
+        tests:
+          - not_null
+
+      - name: vote_count
+        tests:
+          - not_null
+
+  - name: most_profitable_movies
+    description: "Filmes mais lucrativos"
+
+    columns:
+
+      - name: title
+        tests:
+          - not_null
+
+      - name: revenue
+        tests:
+          - not_null
+
+      - name: budget
+        tests:
+          - not_null
+
+      - name: profit
+        tests:
+          - not_null
+
+  - name: movies_by_year
+    description: "Quantidade de filmes por ano"
+
+    columns:
+
+      - name: year
+        tests:
+          - not_null
+          - unique
+
+      - name: total_movies
+        tests:
+          - not_null

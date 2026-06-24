@@ -1,0 +1,66 @@
+version: 2
+
+sources:
+  - name: silver
+    description: "Camada silver contendo dados limpos e padronizados de filmes"
+    
+    tables:
+      - name: movies
+        description: "Tabela de filmes contendo informações de avaliação, popularidade e métricas financeiras"
+
+        columns:
+
+          - name: movie_id
+            description: "Identificador único do filme"
+            tests:
+              - not_null
+              - unique
+
+          - name: title
+            description: "Título do filme"
+            tests:
+              - not_null
+
+          - name: release_date
+            description: "Data de lançamento do filme"
+            tests:
+              - not_null
+
+          - name: budget
+            description: "Orçamento de produção do filme em dólares"
+            tests:
+              - not_null
+
+          - name: revenue
+            description: "Receita total de bilheteria do filme em dólares"
+            tests:
+              - not_null
+
+          - name: runtime
+            description: "Duração do filme em minutos"
+
+          - name: popularity
+            description: "Indicador de popularidade calculado pela plataforma"
+            tests:
+              - not_null
+
+          - name: vote_average
+            description: "Média de avaliação dos usuários"
+            tests:
+              - not_null
+
+          - name: vote_count
+            description: "Quantidade total de votos recebidos"
+            tests:
+              - not_null
+
+          - name: language
+            description: "Idioma original do filme"
+
+          - name: status
+            description: "Status de lançamento do filme (Released, Post Production, etc)"
+
+          - name: ingestion_timestamp
+            description: "Timestamp de ingestão do registro no data lake"
+            tests:
+              - not_null
