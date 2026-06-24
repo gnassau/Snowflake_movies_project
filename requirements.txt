@@ -1,0 +1,5 @@
+awswrangler==3.7.2
+pandas==2.1.4
+dbt-core==1.7.9
+dbt-snowflake==1.7.4
+snowflake-connector-python==3.7.1
